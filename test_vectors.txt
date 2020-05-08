@@ -1,0 +1,12 @@
+('Key', '0123456789abcdef0123')
+('Encrypter Text', 'b324dadb17ba47c0')
+('Decrypted Text', 'ysheldon')
+('Encrypter Text', '42ecc5dd9e15b619')
+('Decrypted Text', 'sandiego')
+('Encrypter Text', '7a1100dab5df7245')
+('Decrypted Text', 'chescake')
+('Encrypter Text', '492f482897711f22')
+('Decrypted Text', 'tomjerry')
+('Encrypter Text', '17081064383ef787')
+('Decrypted Text', 'hackrman')
+
