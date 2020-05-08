@@ -1,12 +1,23 @@
-('Key', '0123456789abcdef0123')
-('Encrypter Text', 'b324dadb17ba47c0')
+('Key', '0f1e2d3c4b5a6978afed')
+('Encrypter Text', '23f345fcb755d7f8')
 ('Decrypted Text', 'ysheldon')
-('Encrypter Text', '42ecc5dd9e15b619')
+('Encrypter Text', 'c661c3d2b48e7e2d')
 ('Decrypted Text', 'sandiego')
-('Encrypter Text', '7a1100dab5df7245')
+('Encrypter Text', '6ad5efe1fd47ff39')
 ('Decrypted Text', 'chescake')
-('Encrypter Text', '492f482897711f22')
+('Encrypter Text', 'cfd07f782460acb2')
 ('Decrypted Text', 'tomjerry')
-('Encrypter Text', '17081064383ef787')
+('Encrypter Text', '65fe186a6d45c33c')
 ('Decrypted Text', 'hackrman')
+
+
+
+
+
+
+
+
+
+
+
 

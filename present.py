@@ -63,7 +63,7 @@ def present_decrypt(number_of_rounds, key_schedule, plain_text):
     return number_to_string(decrypted_state)
 
 def present():
-    key = "0123456789abcdef0123".decode('hex')
+    key = "0f1e2d3c4b5a6978afed".decode('hex')
     print("Key", key.encode('hex'))
     number_of_rounds = 32
     if len(key)*8 == 80:
