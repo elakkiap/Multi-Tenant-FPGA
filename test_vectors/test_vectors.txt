@@ -1,0 +1,59 @@
+('Key 80', '0x2d3c4b5a6978afed09a2L')
+('Hex Format of Plain Text1', '0x797368656c646f6e')
+('Encrypter Text', 'f271bec24b39e83f')
+('Decrypted Text', 'ysheldon')
+('Hex Format of Plain Text2', '0x73616e646965676f')
+('Encrypter Text', 'f62cdd54b491ef90')
+('Decrypted Text', 'sandiego')
+('Hex Format of Plain Text3', '0x6368657363616b65')
+('Encrypter Text', '4b16df1a3c60b80a')
+('Decrypted Text', 'chescake')
+('Hex Format of Plain Text4', '0x746f6d6a65727279')
+('Encrypter Text', '5cebc7f8e666bccf')
+('Decrypted Text', 'tomjerry')
+('Hex Format of Plain Text5', '0x6861636b726d616e')
+('Encrypter Text', 'c6304cbb8615e3f1')
+('Decrypted Text', 'hackrman')
+('Key 128', '0xdb5490480f1e2d3c4b5a6978afed09a2L')
+('Hex Format of Plain Text1', '0x797368656c646f6e')
+('Encrypter Text', '48beec30145c3c34')
+('Decrypted Text', 'ysheldon')
+('Hex Format of Plain Text2', '0x73616e646965676f')
+('Encrypter Text', '95ba1ece710dc9fa')
+('Decrypted Text', 'sandiego')
+('Hex Format of Plain Text3', '0x6368657363616b65')
+('Encrypter Text', 'aee42210dc48f3da')
+('Decrypted Text', 'chescake')
+('Hex Format of Plain Text4', '0x746f6d6a65727279')
+('Encrypter Text', '8b0cd3aff2436fcd')
+('Decrypted Text', 'tomjerry')
+('Hex Format of Plain Text5', '0x6861636b726d616e')
+('Encrypter Text', '15e0a3f4cda33bd9')
+('Decrypted Text', 'hackrman')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
