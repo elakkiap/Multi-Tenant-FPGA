@@ -7,9 +7,13 @@ def generate_round_keys(key, number_of_rounds):
     roundkeys = []
     for round_counter in range(number_of_rounds): 
         roundkeys.append(key >> 64)
+        print(hex(roundkeys[round_counter]))
         key = ((key & (2 ** 67 - 1)) << 61) + (key >> 67)
+        print(hex(key))
         key = (s_box[key >> 124] << 124) + (s_box[(key >> 120)& 0xF] << 120) +  (key & (2 ** 120 - 1))
+        print(hex(key))
         key = key ^ (round_counter + 1) << 62
+        print(hex(key))
     return roundkeys
 
 
@@ -64,7 +68,7 @@ def present_decrypt(number_of_rounds, key_schedule, plain_text):
 
 def present():
     key = 0Xdb5490480f1e2d3c4b5a6978afed09a2
-    print("Key", key)
+    print("Key", hex(key))
     number_of_rounds = 32
     key_schedule = generate_round_keys(key, number_of_rounds)
     plain_text1 = 0X797368656c646f6e
