@@ -6,10 +6,10 @@ inv_p_box = [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 1, 5, 
 def generate_round_keys(key, number_of_rounds):
     roundkeys = []
     for round_counter in range(number_of_rounds): 
-        roundkeys.append(key >> 16)
-        key = ((key & (2 ** 19 - 1)) << 61) + (key >> 19)
-        key = (s_box[key >> 76] << 76) + (key & (2 ** 76 - 1))
-        key = key ^ (round_counter + 1) << 15
+        roundkeys.append(key >> 64)
+        key = ((key & (2 ** 67 - 1)) << 61) + (key >> 67)
+        key = (s_box[key >> 124] << 124) + (s_box[(key >> 120)& 0xF] << 120) +  (key & (2 ** 120 - 1))
+        key = key ^ (round_counter + 1) << 62
     return roundkeys
 
 
@@ -63,13 +63,13 @@ def present_decrypt(number_of_rounds, key_schedule, plain_text):
     return number_to_string(decrypted_state)
 
 def present():
-    key = "0f1e2d3c4b5a6978afed".decode('hex')
+    key = "db5490480f1e2d3c4b5a6978afed09a2".decode('hex')
     print("Key", key.encode('hex'))
     number_of_rounds = 32
-    if len(key)*8 == 80:
+    if len(key)*8 == 128:
         key_schedule = generate_round_keys(int(key.encode('hex'), 16), number_of_rounds)
     else:
-        raise ValueError, "The Key must be 80 bits"
+        raise ValueError, "The Key must be 128 bits"
     plain_text1 = "ysheldon"
     encrypted_text1 = present_encrypt(number_of_rounds, key_schedule, plain_text1)
     print("Encrypter Text", encrypted_text1.encode('hex'))
