@@ -1,0 +1,14 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../test_present.cpp in debug mode
+   Compiling ../../../../present.cpp in debug mode
+   Generating csim.exe
+The key is 00000000000000000000, plain text is 0000000000000000, golden cipher is 5579C1387B228445 and the computed cipher is 5579C1387B228445
+The key is 2D3C4B5A6978AFED09A2, plain text is 797368656C646F6E, golden cipher is 78565173E21A9B11 and the computed cipher is 78565173E21A9B11
+The key is 2D3C4B5A6978AFED09A2, plain text is 73616E646965676F, golden cipher is 883EB1649D771AA7 and the computed cipher is 883EB1649D771AA7
+The key is 2D3C4B5A6978AFED09A2, plain text is 6368657363616B65, golden cipher is 079CEC86DBBACC74 and the computed cipher is 079CEC86DBBACC74
+The key is 2D3C4B5A6978AFED09A2, plain text is 746F6D6A65727279, golden cipher is B21DA5DB83192787 and the computed cipher is B21DA5DB83192787
+The key is 2D3C4B5A6978AFED09A2, plain text is 6861636B726D616E, golden cipher is E289A84B226748E7 and the computed cipher is E289A84B226748E7
+The key is FFFFFFFFFFFFFFFFFFFF, plain text is 0000000000000000, golden cipher is E72C46C0F5945049 and the computed cipher is E72C46C0F5945049
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
