@@ -9,16 +9,17 @@ def generate_round_keys128(key, number_of_rounds):
         roundkeys.append(key >> 64)
         key = ((key & (2 ** 67 - 1)) << 61) + (key >> 67)
         key = (s_box[key >> 124] << 124) + (s_box[(key >> 120)& 0xF] << 120) +  (key & (2 ** 120 - 1))
-        key = key ^ (round_counter) << 62
+        key = key ^ (round_counter+ 1) << 62
     return roundkeys
 
 def generate_round_keys80(key, number_of_rounds):
     roundkeys = []
     for round_counter in range(number_of_rounds):
         roundkeys.append(key >> 16)
+        #left shift in python just appends zeros to the lsb and increases the bits in the variable
         key = ((key & (2 ** 19 - 1)) << 61) + (key >> 19)
         key = (s_box[key >> 76] << 76) + (key & (2 ** 76 - 1))
-        key = key ^ (round_counter) << 15
+        key = key ^ (round_counter + 1) << 15
     return roundkeys
 
 
@@ -49,10 +50,6 @@ def p_layer_dec(state):
         p_output += ((state >> i) & 0x01) << inv_p_box[i]
     return p_output
 
-def number_to_string(i):
-    string = '%0*x' % (16, i)
-    return string.decode('hex')
-
 def present_encrypt(number_of_rounds, key_schedule, plain_text):
     current_state = plain_text
     for round_counter in range(number_of_rounds - 1):
@@ -60,86 +57,104 @@ def present_encrypt(number_of_rounds, key_schedule, plain_text):
         current_state = sbox_layer_enc(current_state)
         current_state = p_layer_enc(current_state)
     encrypted_state  = add_round_key(current_state, key_schedule[-1])
-    return number_to_string(encrypted_state)
+    return encrypted_state
 
-def present_decrypt(number_of_rounds, key_schedule, plain_text):
-    current_state = int(plain_text.encode('hex'), 16)
+def present_decrypt(number_of_rounds, key_schedule, cipher):
+    current_state = cipher
     for round_counter in range(number_of_rounds - 1):
         current_state = add_round_key(current_state, key_schedule[-round_counter - 1])
         current_state = p_layer_dec(current_state)
         current_state = sbox_layer_dec(current_state)
     decrypted_state = add_round_key(current_state, key_schedule[0])
-    return number_to_string(decrypted_state)
+    return decrypted_state
 
 def present():
+    number_of_rounds = 32
     key_80 = 0X2d3c4b5a6978afed09a2
     key_128 = 0Xdb5490480f1e2d3c4b5a6978afed09a2
+    print("Results from the paper")
+    key80_1 = 0x00000000000000000000
+    key80_2 = 0xffffffffffffffffffff
+    plain_text1 = 0x00000000
+    plain_text2 = 0xffffffff
+    print("Key",hex(key80_1))
+    key_schedule = generate_round_keys80(key80_1, number_of_rounds)
+    encrypted_text1 = present_encrypt(number_of_rounds, key_schedule, plain_text1)
+    print("Encrypted Text", hex(encrypted_text1))
+    decrypted_text1 = present_decrypt(number_of_rounds, key_schedule, encrypted_text1)
+    print("Decrypted Text", hex(decrypted_text1))
+    print("Key", hex(key80_2))
+    key_schedule = generate_round_keys80(key80_2, number_of_rounds)
+    encrypted_text1 = present_encrypt(number_of_rounds, key_schedule, plain_text1)
+    print("Encrypted Text", hex(encrypted_text1))
+    decrypted_text1 = present_decrypt(number_of_rounds, key_schedule, encrypted_text1)
+    print("Decrypted Text", hex(decrypted_text1))
+    print("Self Generated Results")
     print("Key 80", hex(key_80))
-    number_of_rounds = 32
     key_schedule = generate_round_keys80(key_80, number_of_rounds)
     plain_text1 = 0X797368656c646f6e
     print("Hex Format of Plain Text1", hex(plain_text1))
     encrypted_text1 = present_encrypt(number_of_rounds, key_schedule, plain_text1)
-    print("Encrypter Text", encrypted_text1.encode('hex'))
+    print("Encrypter Text", hex(encrypted_text1))
     decrypted_text1 = present_decrypt(number_of_rounds, key_schedule, encrypted_text1)
-    print("Decrypted Text", decrypted_text1)
+    print("Decrypted Text", hex(decrypted_text1))
     plain_text2 = 0X73616e646965676f
     print("Hex Format of Plain Text2", hex(plain_text2))
     encrypted_text2 = present_encrypt(number_of_rounds, key_schedule, plain_text2)
-    print("Encrypter Text", encrypted_text2.encode('hex'))
+    print("Encrypter Text", hex(encrypted_text2))
     decrypted_text2 = present_decrypt(number_of_rounds, key_schedule, encrypted_text2)
-    print("Decrypted Text", decrypted_text2)
+    print("Decrypted Text", hex(decrypted_text2))
     plain_text3 = 0X6368657363616b65
     print("Hex Format of Plain Text3", hex(plain_text3))
     encrypted_text3 = present_encrypt(number_of_rounds, key_schedule, plain_text3)
-    print("Encrypter Text", encrypted_text3.encode('hex'))
+    print("Encrypter Text", hex(encrypted_text3))
     decrypted_text3 = present_decrypt(number_of_rounds, key_schedule, encrypted_text3)
-    print("Decrypted Text", decrypted_text3)
+    print("Decrypted Text", hex(decrypted_text3))
     plain_text4 = 0X746f6d6a65727279
     print("Hex Format of Plain Text4", hex(plain_text4))
     encrypted_text4 = present_encrypt(number_of_rounds, key_schedule, plain_text4)
-    print("Encrypter Text", encrypted_text4.encode('hex'))
+    print("Encrypter Text", hex(encrypted_text4))
     decrypted_text4 = present_decrypt(number_of_rounds, key_schedule, encrypted_text4)
-    print("Decrypted Text", decrypted_text4)
+    print("Decrypted Text", hex(decrypted_text4))
     plain_text5 = 0X6861636b726d616e
     print("Hex Format of Plain Text5", hex(plain_text5))
     encrypted_text5 = present_encrypt(number_of_rounds, key_schedule, plain_text5)
-    print("Encrypter Text", encrypted_text5.encode('hex'))
+    print("Encrypter Text", hex(encrypted_text5))
     decrypted_text5 = present_decrypt(number_of_rounds, key_schedule, encrypted_text5)
-    print("Decrypted Text", decrypted_text5)
+    print("Decrypted Text", hex(decrypted_text5))
     print("Key 128", hex(key_128))
     number_of_rounds = 32
     key_schedule = generate_round_keys128(key_128, number_of_rounds)
     plain_text1 = 0X797368656c646f6e
     print("Hex Format of Plain Text1", hex(plain_text1))
     encrypted_text1 = present_encrypt(number_of_rounds, key_schedule, plain_text1)
-    print("Encrypter Text", encrypted_text1.encode('hex'))
+    print("Encrypter Text", hex(encrypted_text1))
     decrypted_text1 = present_decrypt(number_of_rounds, key_schedule, encrypted_text1)
-    print("Decrypted Text", decrypted_text1)
+    print("Decrypted Text", hex(decrypted_text1))
     plain_text2 = 0X73616e646965676f
     print("Hex Format of Plain Text2", hex(plain_text2))
     encrypted_text2 = present_encrypt(number_of_rounds, key_schedule, plain_text2)
-    print("Encrypter Text", encrypted_text2.encode('hex'))
+    print("Encrypter Text", (encrypted_text2))
     decrypted_text2 = present_decrypt(number_of_rounds, key_schedule, encrypted_text2)
-    print("Decrypted Text", decrypted_text2)
+    print("Decrypted Text", hex(decrypted_text2))
     plain_text3 = 0X6368657363616b65
     print("Hex Format of Plain Text3", hex(plain_text3))
     encrypted_text3 = present_encrypt(number_of_rounds, key_schedule, plain_text3)
-    print("Encrypter Text", encrypted_text3.encode('hex'))
+    print("Encrypter Text", hex(encrypted_text3))
     decrypted_text3 = present_decrypt(number_of_rounds, key_schedule, encrypted_text3)
-    print("Decrypted Text", decrypted_text3)
+    print("Decrypted Text", hex(decrypted_text3))
     plain_text4 = 0X746f6d6a65727279
     print("Hex Format of Plain Text4", hex(plain_text4))
     encrypted_text4 = present_encrypt(number_of_rounds, key_schedule, plain_text4)
-    print("Encrypter Text", encrypted_text4.encode('hex'))
+    print("Encrypter Text", hex(encrypted_text4))
     decrypted_text4 = present_decrypt(number_of_rounds, key_schedule, encrypted_text4)
-    print("Decrypted Text", decrypted_text4)
+    print("Decrypted Text", hex(decrypted_text4))
     plain_text5 = 0X6861636b726d616e
     print("Hex Format of Plain Text5", hex(plain_text5))
     encrypted_text5 = present_encrypt(number_of_rounds, key_schedule, plain_text5)
-    print("Encrypter Text", encrypted_text5.encode('hex'))
+    print("Encrypter Text", hex(encrypted_text5))
     decrypted_text5 = present_decrypt(number_of_rounds, key_schedule, encrypted_text5)
-    print("Decrypted Text", decrypted_text5)
+    print("Decrypted Text", hex(decrypted_text5))
 
 
 present()
