@@ -1,0 +1,733 @@
+
+
+================================================================
+== Vivado HLS Report for 'present_encrypt'
+================================================================
+* Date:           Wed May 13 17:04:03 2020
+
+* Version:        2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)
+* Project:        present
+* Solution:       dataflow_2
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      7.85|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+-----+-----+----------+
+    |   Latency   |  Interval | Pipeline |
+    |  min |  max | min | max |   Type   |
+    +------+------+-----+-----+----------+
+    |  2666|  2666|   86|   86| dataflow |
+    +------+------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +---------------+------------+-----+-----+-----+-----+---------+
+        |               |            |  Latency  |  Interval | Pipeline|
+        |    Instance   |   Module   | min | max | min | max |   Type  |
+        +---------------+------------+-----+-----+-----+-----+---------+
+        |present_1_U0   |present_1   |   85|   85|   85|   85|   none  |
+        |present_2_U0   |present_2   |   85|   85|   85|   85|   none  |
+        |present_3_U0   |present_3   |   85|   85|   85|   85|   none  |
+        |present_4_U0   |present_4   |   85|   85|   85|   85|   none  |
+        |present_5_U0   |present_5   |   85|   85|   85|   85|   none  |
+        |present_6_U0   |present_6   |   85|   85|   85|   85|   none  |
+        |present_7_U0   |present_7   |   85|   85|   85|   85|   none  |
+        |present_8_U0   |present_8   |   85|   85|   85|   85|   none  |
+        |present_9_U0   |present_9   |   85|   85|   85|   85|   none  |
+        |present_10_U0  |present_10  |   85|   85|   85|   85|   none  |
+        |present_11_U0  |present_11  |   85|   85|   85|   85|   none  |
+        |present_12_U0  |present_12  |   85|   85|   85|   85|   none  |
+        |present_13_U0  |present_13  |   85|   85|   85|   85|   none  |
+        |present_14_U0  |present_14  |   85|   85|   85|   85|   none  |
+        |present_15_U0  |present_15  |   85|   85|   85|   85|   none  |
+        |present_16_U0  |present_16  |   85|   85|   85|   85|   none  |
+        |present_17_U0  |present_17  |   85|   85|   85|   85|   none  |
+        |present_18_U0  |present_18  |   85|   85|   85|   85|   none  |
+        |present_19_U0  |present_19  |   85|   85|   85|   85|   none  |
+        |present_20_U0  |present_20  |   85|   85|   85|   85|   none  |
+        |present_21_U0  |present_21  |   85|   85|   85|   85|   none  |
+        |present_22_U0  |present_22  |   85|   85|   85|   85|   none  |
+        |present_23_U0  |present_23  |   85|   85|   85|   85|   none  |
+        |present_24_U0  |present_24  |   85|   85|   85|   85|   none  |
+        |present_25_U0  |present_25  |   85|   85|   85|   85|   none  |
+        |present_26_U0  |present_26  |   85|   85|   85|   85|   none  |
+        |present_27_U0  |present_27  |   85|   85|   85|   85|   none  |
+        |present_28_U0  |present_28  |   85|   85|   85|   85|   none  |
+        |present_29_U0  |present_29  |   85|   85|   85|   85|   none  |
+        |present_30_U0  |present_30  |   85|   85|   85|   85|   none  |
+        |present_31_U0  |present_31  |   85|   85|   85|   85|   none  |
+        |present_32_U0  |present_32  |    0|    0|    0|    0|   none  |
+        |Block_proc_U0  |Block_proc  |    0|    0|    0|    0|   none  |
+        +---------------+------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    498|
+|FIFO             |        0|      -|       0|     93|
+|Instance         |        0|      -|   34976|  36343|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    837|
+|Register         |        -|      -|      93|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|   35069|  37771|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|      32|     70|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +---------------+------------+---------+-------+------+------+
+    |    Instance   |   Module   | BRAM_18K| DSP48E|  FF  |  LUT |
+    +---------------+------------+---------+-------+------+------+
+    |Block_proc_U0  |Block_proc  |        0|      0|    66|    20|
+    |present_1_U0   |present_1   |        0|      0|  1124|  1169|
+    |present_10_U0  |present_10  |        0|      0|  1124|  1169|
+    |present_11_U0  |present_11  |        0|      0|  1124|  1169|
+    |present_12_U0  |present_12  |        0|      0|  1124|  1169|
+    |present_13_U0  |present_13  |        0|      0|  1124|  1169|
+    |present_14_U0  |present_14  |        0|      0|  1124|  1169|
+    |present_15_U0  |present_15  |        0|      0|  1124|  1169|
+    |present_16_U0  |present_16  |        0|      0|  1124|  1169|
+    |present_17_U0  |present_17  |        0|      0|  1124|  1169|
+    |present_18_U0  |present_18  |        0|      0|  1124|  1169|
+    |present_19_U0  |present_19  |        0|      0|  1124|  1169|
+    |present_2_U0   |present_2   |        0|      0|  1124|  1169|
+    |present_20_U0  |present_20  |        0|      0|  1124|  1169|
+    |present_21_U0  |present_21  |        0|      0|  1124|  1169|
+    |present_22_U0  |present_22  |        0|      0|  1124|  1169|
+    |present_23_U0  |present_23  |        0|      0|  1124|  1169|
+    |present_24_U0  |present_24  |        0|      0|  1124|  1169|
+    |present_25_U0  |present_25  |        0|      0|  1124|  1169|
+    |present_26_U0  |present_26  |        0|      0|  1124|  1169|
+    |present_27_U0  |present_27  |        0|      0|  1124|  1169|
+    |present_28_U0  |present_28  |        0|      0|  1124|  1169|
+    |present_29_U0  |present_29  |        0|      0|  1124|  1169|
+    |present_3_U0   |present_3   |        0|      0|  1124|  1169|
+    |present_30_U0  |present_30  |        0|      0|  1124|  1169|
+    |present_31_U0  |present_31  |        0|      0|  1124|  1169|
+    |present_32_U0  |present_32  |        0|      0|    66|    84|
+    |present_4_U0   |present_4   |        0|      0|  1124|  1169|
+    |present_5_U0   |present_5   |        0|      0|  1124|  1169|
+    |present_6_U0   |present_6   |        0|      0|  1124|  1169|
+    |present_7_U0   |present_7   |        0|      0|  1124|  1169|
+    |present_8_U0   |present_8   |        0|      0|  1124|  1169|
+    |present_9_U0   |present_9   |        0|      0|  1124|  1169|
+    +---------------+------------+---------+-------+------+------+
+    |Total          |            |        0|      0| 34976| 36343|
+    +---------------+------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +---------------+---------+---+----+------+-----+---------+
+    |      Name     | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +---------------+---------+---+----+------+-----+---------+
+    |block10_U      |        0|  0|   1|     2|   64|      128|
+    |block11_U      |        0|  0|   1|     2|   64|      128|
+    |block12_U      |        0|  0|   1|     2|   64|      128|
+    |block13_U      |        0|  0|   1|     2|   64|      128|
+    |block14_U      |        0|  0|   1|     2|   64|      128|
+    |block15_U      |        0|  0|   1|     2|   64|      128|
+    |block16_U      |        0|  0|   1|     2|   64|      128|
+    |block17_U      |        0|  0|   1|     2|   64|      128|
+    |block18_U      |        0|  0|   1|     2|   64|      128|
+    |block19_U      |        0|  0|   1|     2|   64|      128|
+    |block20_U      |        0|  0|   1|     2|   64|      128|
+    |block21_U      |        0|  0|   1|     2|   64|      128|
+    |block22_U      |        0|  0|   1|     2|   64|      128|
+    |block23_U      |        0|  0|   1|     2|   64|      128|
+    |block24_U      |        0|  0|   1|     2|   64|      128|
+    |block25_U      |        0|  0|   1|     2|   64|      128|
+    |block26_U      |        0|  0|   1|     2|   64|      128|
+    |block27_U      |        0|  0|   1|     2|   64|      128|
+    |block28_U      |        0|  0|   1|     2|   64|      128|
+    |block29_U      |        0|  0|   1|     2|   64|      128|
+    |block2_U       |        0|  0|   1|     2|   64|      128|
+    |block30_U      |        0|  0|   1|     2|   64|      128|
+    |block31_U      |        0|  0|   1|     2|   64|      128|
+    |block32_U      |        0|  0|   1|     2|   64|      128|
+    |block3_U       |        0|  0|   1|     2|   64|      128|
+    |block4_U       |        0|  0|   1|     2|   64|      128|
+    |block5_U       |        0|  0|   1|     2|   64|      128|
+    |block6_U       |        0|  0|   1|     2|   64|      128|
+    |block7_U       |        0|  0|   1|     2|   64|      128|
+    |block8_U       |        0|  0|   1|     2|   64|      128|
+    |block9_U       |        0|  0|   1|     2|   64|      128|
+    |final_block_U  |        0|  0|   0|     2|   64|      128|
+    |high_key10_U   |        0|  0|   1|     2|   16|       32|
+    |high_key11_U   |        0|  0|   1|     2|   16|       32|
+    |high_key12_U   |        0|  0|   1|     2|   16|       32|
+    |high_key13_U   |        0|  0|   1|     2|   16|       32|
+    |high_key14_U   |        0|  0|   1|     2|   16|       32|
+    |high_key15_U   |        0|  0|   1|     2|   16|       32|
+    |high_key16_U   |        0|  0|   1|     2|   16|       32|
+    |high_key17_U   |        0|  0|   1|     2|   16|       32|
+    |high_key18_U   |        0|  0|   1|     2|   16|       32|
+    |high_key19_U   |        0|  0|   1|     2|   16|       32|
+    |high_key20_U   |        0|  0|   1|     2|   16|       32|
+    |high_key21_U   |        0|  0|   1|     2|   16|       32|
+    |high_key22_U   |        0|  0|   1|     2|   16|       32|
+    |high_key23_U   |        0|  0|   1|     2|   16|       32|
+    |high_key24_U   |        0|  0|   1|     2|   16|       32|
+    |high_key25_U   |        0|  0|   1|     2|   16|       32|
+    |high_key26_U   |        0|  0|   1|     2|   16|       32|
+    |high_key27_U   |        0|  0|   1|     2|   16|       32|
+    |high_key28_U   |        0|  0|   1|     2|   16|       32|
+    |high_key29_U   |        0|  0|   1|     2|   16|       32|
+    |high_key2_U    |        0|  0|   1|     2|   16|       32|
+    |high_key30_U   |        0|  0|   1|     2|   16|       32|
+    |high_key31_U   |        0|  0|   1|     2|   16|       32|
+    |high_key32_U   |        0|  0|   1|     2|   16|       32|
+    |high_key3_U    |        0|  0|   1|     2|   16|       32|
+    |high_key4_U    |        0|  0|   1|     2|   16|       32|
+    |high_key5_U    |        0|  0|   1|     2|   16|       32|
+    |high_key6_U    |        0|  0|   1|     2|   16|       32|
+    |high_key7_U    |        0|  0|   1|     2|   16|       32|
+    |high_key8_U    |        0|  0|   1|     2|   16|       32|
+    |high_key9_U    |        0|  0|   1|     2|   16|       32|
+    |key_low10_U    |        0|  0|   1|     2|   64|      128|
+    |key_low11_U    |        0|  0|   1|     2|   64|      128|
+    |key_low12_U    |        0|  0|   1|     2|   64|      128|
+    |key_low13_U    |        0|  0|   1|     2|   64|      128|
+    |key_low14_U    |        0|  0|   1|     2|   64|      128|
+    |key_low15_U    |        0|  0|   1|     2|   64|      128|
+    |key_low16_U    |        0|  0|   1|     2|   64|      128|
+    |key_low17_U    |        0|  0|   1|     2|   64|      128|
+    |key_low18_U    |        0|  0|   1|     2|   64|      128|
+    |key_low19_U    |        0|  0|   1|     2|   64|      128|
+    |key_low20_U    |        0|  0|   1|     2|   64|      128|
+    |key_low21_U    |        0|  0|   1|     2|   64|      128|
+    |key_low22_U    |        0|  0|   1|     2|   64|      128|
+    |key_low23_U    |        0|  0|   1|     2|   64|      128|
+    |key_low24_U    |        0|  0|   1|     2|   64|      128|
+    |key_low25_U    |        0|  0|   1|     2|   64|      128|
+    |key_low26_U    |        0|  0|   1|     2|   64|      128|
+    |key_low27_U    |        0|  0|   1|     2|   64|      128|
+    |key_low28_U    |        0|  0|   1|     2|   64|      128|
+    |key_low29_U    |        0|  0|   1|     2|   64|      128|
+    |key_low2_U     |        0|  0|   1|     2|   64|      128|
+    |key_low30_U    |        0|  0|   1|     2|   64|      128|
+    |key_low31_U    |        0|  0|   1|     2|   64|      128|
+    |key_low32_U    |        0|  0|   1|     2|   64|      128|
+    |key_low3_U     |        0|  0|   1|     2|   64|      128|
+    |key_low4_U     |        0|  0|   1|     2|   64|      128|
+    |key_low5_U     |        0|  0|   1|     2|   64|      128|
+    |key_low6_U     |        0|  0|   1|     2|   64|      128|
+    |key_low7_U     |        0|  0|   1|     2|   64|      128|
+    |key_low8_U     |        0|  0|   1|     2|   64|      128|
+    |key_low9_U     |        0|  0|   1|     2|   64|      128|
+    +---------------+---------+---+----+------+-----+---------+
+    |Total          |        0|  0|  93|   188| 4528|     9056|
+    +---------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |ap_channel_done_block10           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block11           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block12           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block13           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block14           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block15           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block16           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block17           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block18           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block19           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block2            |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block20           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block21           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block22           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block23           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block24           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block25           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block26           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block27           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block28           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block29           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block3            |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block30           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block31           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block32           |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block4            |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block5            |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block6            |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block7            |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block8            |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_block9            |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key10        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key11        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key12        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key13        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key14        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key15        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key16        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key17        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key18        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key19        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key2         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key20        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key21        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key22        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key23        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key24        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key25        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key26        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key27        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key28        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key29        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key3         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key30        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key31        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key32        |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key4         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key5         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key6         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key7         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key8         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_high_key9         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low10         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low11         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low12         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low13         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low14         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low15         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low16         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low17         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low18         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low19         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low2          |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low20         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low21         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low22         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low23         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low24         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low25         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low26         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low27         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low28         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low29         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low3          |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low30         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low31         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low32         |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low4          |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low5          |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low6          |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low7          |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low8          |    and   |      0|  0|   2|           1|           1|
+    |ap_channel_done_key_low9          |    and   |      0|  0|   2|           1|           1|
+    |ap_idle                           |    and   |      0|  0|   2|           1|           1|
+    |present_10_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_10_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_11_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_11_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_12_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_12_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_13_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_13_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_14_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_14_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_15_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_15_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_16_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_16_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_17_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_17_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_18_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_18_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_19_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_19_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_1_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
+    |present_20_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_20_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_21_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_21_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_22_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_22_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_23_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_23_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_24_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_24_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_25_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_25_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_26_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_26_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_27_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_27_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_28_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_28_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_29_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_29_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_2_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
+    |present_2_U0_ap_start             |    and   |      0|  0|   2|           1|           1|
+    |present_30_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_30_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_31_U0_ap_continue         |    and   |      0|  0|   2|           1|           1|
+    |present_31_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_32_U0_ap_start            |    and   |      0|  0|   2|           1|           1|
+    |present_3_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
+    |present_3_U0_ap_start             |    and   |      0|  0|   2|           1|           1|
+    |present_4_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
+    |present_4_U0_ap_start             |    and   |      0|  0|   2|           1|           1|
+    |present_5_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
+    |present_5_U0_ap_start             |    and   |      0|  0|   2|           1|           1|
+    |present_6_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
+    |present_6_U0_ap_start             |    and   |      0|  0|   2|           1|           1|
+    |present_7_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
+    |present_7_U0_ap_start             |    and   |      0|  0|   2|           1|           1|
+    |present_8_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
+    |present_8_U0_ap_start             |    and   |      0|  0|   2|           1|           1|
+    |present_9_U0_ap_continue          |    and   |      0|  0|   2|           1|           1|
+    |present_9_U0_ap_start             |    and   |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block10     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block11     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block12     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block13     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block14     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block15     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block16     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block17     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block18     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block19     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block2      |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block20     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block21     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block22     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block23     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block24     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block25     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block26     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block27     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block28     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block29     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block3      |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block30     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block31     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block32     |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block4      |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block5      |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block6      |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block7      |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block8      |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_block9      |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key10  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key11  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key12  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key13  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key14  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key15  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key16  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key17  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key18  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key19  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key2   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key20  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key21  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key22  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key23  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key24  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key25  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key26  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key27  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key28  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key29  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key3   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key30  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key31  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key32  |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key4   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key5   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key6   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key7   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key8   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_high_key9   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low10   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low11   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low12   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low13   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low14   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low15   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low16   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low17   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low18   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low19   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low2    |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low20   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low21   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low22   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low23   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low24   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low25   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low26   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low27   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low28   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low29   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low3    |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low30   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low31   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low32   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low4    |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low5    |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low6    |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low7    |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low8    |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_channel_write_key_low9    |    or    |      0|  0|   2|           1|           1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0| 498|         249|         249|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_channel_write_block10     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block11     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block12     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block13     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block14     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block15     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block16     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block17     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block18     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block19     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block2      |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block20     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block21     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block22     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block23     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block24     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block25     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block26     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block27     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block28     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block29     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block3      |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block30     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block31     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block32     |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block4      |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block5      |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block6      |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block7      |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block8      |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_block9      |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key10  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key11  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key12  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key13  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key14  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key15  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key16  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key17  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key18  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key19  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key2   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key20  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key21  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key22  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key23  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key24  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key25  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key26  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key27  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key28  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key29  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key3   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key30  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key31  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key32  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key4   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key5   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key6   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key7   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key8   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_high_key9   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low10   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low11   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low12   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low13   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low14   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low15   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low16   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low17   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low18   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low19   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low2    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low20   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low21   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low22   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low23   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low24   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low25   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low26   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low27   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low28   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low29   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low3    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low30   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low31   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low32   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low4    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low5    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low6    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low7    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low8    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_key_low9    |   9|          2|    1|          2|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 | 837|        186|   93|        186|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------+---+----+-----+-----------+
+    |                 Name                 | FF| LUT| Bits| Const Bits|
+    +--------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_channel_write_block10     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block11     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block12     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block13     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block14     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block15     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block16     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block17     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block18     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block19     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block2      |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block20     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block21     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block22     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block23     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block24     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block25     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block26     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block27     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block28     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block29     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block3      |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block30     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block31     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block32     |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block4      |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block5      |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block6      |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block7      |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block8      |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_block9      |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key10  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key11  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key12  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key13  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key14  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key15  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key16  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key17  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key18  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key19  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key2   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key20  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key21  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key22  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key23  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key24  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key25  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key26  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key27  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key28  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key29  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key3   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key30  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key31  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key32  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key4   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key5   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key6   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key7   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key8   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_high_key9   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low10   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low11   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low12   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low13   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low14   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low15   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low16   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low17   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low18   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low19   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low2    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low20   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low21   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low22   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low23   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low24   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low25   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low26   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low27   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low28   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low29   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low3    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low30   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low31   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low32   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low4    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low5    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low6    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low7    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low8    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_key_low9    |  1|   0|    1|          0|
+    +--------------------------------------+---+----+-----+-----------+
+    |Total                                 | 93|   0|   93|          0|
+    +--------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+-----+------------+-----------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++---------------+-----+-----+------------+-----------------+--------------+
+|key_high       |  in |   16|   ap_none  |     key_high    |    scalar    |
+|key_low        |  in |   64|   ap_none  |     key_low     |    scalar    |
+|plain_text     |  in |   64|   ap_none  |    plain_text   |    scalar    |
+|cipher         | out |   64|   ap_vld   |      cipher     |    pointer   |
+|cipher_ap_vld  | out |    1|   ap_vld   |      cipher     |    pointer   |
+|ap_clk         |  in |    1| ap_ctrl_hs | present_encrypt | return value |
+|ap_rst         |  in |    1| ap_ctrl_hs | present_encrypt | return value |
+|ap_done        | out |    1| ap_ctrl_hs | present_encrypt | return value |
+|ap_start       |  in |    1| ap_ctrl_hs | present_encrypt | return value |
+|ap_ready       | out |    1| ap_ctrl_hs | present_encrypt | return value |
+|ap_idle        | out |    1| ap_ctrl_hs | present_encrypt | return value |
++---------------+-----+-----+------------+-----------------+--------------+
+
